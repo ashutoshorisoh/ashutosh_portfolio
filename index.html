@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Portfolio Website Design</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <!-- Buttons and Contact Icons -->
+    <div class="top-buttons">
+        <button class="btn view-projects-btn" onclick="scrollToProjects()">Projects</button>
+        <button class="btn contact-me-btn" onclick="toggleContactIcons()">Contact Me</button>
+        <div class="contact-icons hidden">
+            <a href="mailto:thakurashutosh39920@gmail.com" class="contact-icon" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/ashutosh-thakur-5a3b32254/" class="contact-icon" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <div class="hero-header">
+        <div class="wrapper">
+            <div class="container">
+                <div class="hero-pic">
+                    <img src="2ndphoto.jpg" alt="Profile Picture">
+                </div>
+                <div class="hero-text">
+                    <h1>I'm Ashutosh, an aspiring Frontend Developer</h1>
+                    <p>A fast learner with solid knowledge in JavaScript, React.js, and Tailwind CSS and other front end frameworks</p>
+                    <div class="btn-group">
+                        <!-- Updated to use href for direct PDF download -->
+                        <a href="https://docs.google.com/document/d/11RIYTCy9Fi1VDqbxwmD6cFd0GBZVPhvweZ76IxMVOsg/export?format=pdf" 
+                           class="btn active" 
+                           target="_blank">
+                           Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Photo Section -->
+    <div class="photo-section">
+        <div class="photo-wrapper">
+            
+        </div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div class="section portfolio" id="portfolio">
+        <div>   </div>
+        <div></div>
+        <div></div>
+        <h2 id="myproj">My Projects</h2>
+        <div class="portfolio-boxes">
+            <div class="portfolio-box">
+                <h2>What-Text</h2>
+                <p>Web-Based Chat App</p>
+                <a href="https://what-textapp.web.app" target="_blank">View Project</a>
+            </div>
+            <div class="portfolio-box">
+                <h2>Video Player App</h2>
+                <p>Video Player Web App</p>
+                <a href="https://66e7e006bc17b4dce8f08c82--video-play-ok.netlify.app/" target="_blank">View Project</a>
+            </div>
+            <!-- Add more projects here -->
+        </div>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+        <a href="https://github.com/ashutoshorisoh" class="social-icon" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://x.com/ashutoshorisoh" class="social-icon" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+       
+    </div>
+
+    <script>
+        // Function to download resume
+        function downloadResume() {
+            window.location.href = 'https://docs.google.com/document/d/11RIYTCy9Fi1VDqbxwmD6cFd0GBZVPhvweZ76IxMVOsg/export?format=pdf';
+        }
+
+        // Toggle contact icons visibility
+        function toggleContactIcons() {
+            const contactIcons = document.querySelector('.contact-icons');
+            contactIcons.classList.toggle('hidden');
+        }
+
+        // Scroll to Projects Section
+        function scrollToProjects() {
+            const portfolioSection = document.getElementById('portfolio');
+            const heroSection = document.querySelector('.hero-header');
+            const topButtons = document.querySelector('.top-buttons');
+
+            // Toggle view
+            if (portfolioSection.classList.contains('active')) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                portfolioSection.classList.remove('active');
+                heroSection.style.display = 'flex';
+                topButtons.style.display = 'flex';
+                document.querySelector('.view-projects-btn').innerText = 'View Projects';
+            } else {
+                window.scrollTo({ top: portfolioSection.offsetTop, behavior: 'smooth' });
+                heroSection.style.display = 'none';
+                topButtons.style.display = 'flex';
+                portfolioSection.classList.add('active');
+                document.querySelector('.view-projects-btn').innerText = 'Home';
+            }
+        }
+    </script>
+</body>
+</html>
