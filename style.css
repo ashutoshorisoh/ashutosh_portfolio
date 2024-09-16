@@ -167,8 +167,9 @@ nav#navbar {
     align-items: center;
     justify-content: center;
     min-height: 100vh; 
-    gap: 20px/* Ensures it takes the full viewport height */
+    gap: 20px; /* Ensures it takes the full viewport height */
 }
+
 #myproj {
     color: white;
     font-size: 3rem;
@@ -176,20 +177,16 @@ nav#navbar {
     background: #007ced;
     border-radius: 10px;
     padding: 12px;
-    
-    
 }
-
 
 .portfolio-boxes {
     display: flex;
-    felx-direction: column;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     gap: 80px;
     padding: 0 100px;
     margin-top: 10px;
-
 }
 
 .portfolio-box {
@@ -206,8 +203,7 @@ nav#navbar {
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 10px 10px 15px rgba(255, 255, 195, 0.1)
-    
+    box-shadow: 10px 10px 15px rgba(255, 255, 195, 0.1);
 }
 
 .portfolio-box:hover {
@@ -291,9 +287,10 @@ nav#navbar {
 
     .top-buttons {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center; /* Center buttons on smaller screens */
     }
 }
+
 @media (max-width: 480px) {
     .portfolio-box {
         padding: 15px; /* Adjust padding for very small screens */
@@ -309,5 +306,10 @@ nav#navbar {
 
     .portfolio-box a {
         font-size: 0.875rem; /* Smaller font size for links */
+    }
+
+    .top-buttons {
+        right: 10px; /* Adjust positioning */
+        top: 10px; /* Adjust positioning */
     }
 }
